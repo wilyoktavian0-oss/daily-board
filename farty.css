@@ -1,0 +1,154 @@
+body {
+  margin: 0;
+}
+
+main#app {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 40px 40px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  grid-template-areas:
+    "judul judul"
+    "tugas catatan"
+    "tugas kutipan"
+    "tugas cuaca";
+  gap: 16px;
+  align-items: start;
+}
+
+#judul-app {
+  grid-area: judul;
+}
+
+section {
+  border: 1px solid #ccc;
+  border-top: 3px solid #333;
+  padding: 16px;
+  background: #fafafa;
+}
+
+#section-tugas {
+  grid-area: tugas;
+  align-self: stretch;
+}
+
+#section-catatan {
+  grid-area: catatan;
+}
+
+#section-kutipan {
+  grid-area: kutipan;
+}
+
+#section-cuaca {
+  grid-area: cuaca;
+}
+
+header {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px 40px;
+  border-bottom: 2px solid #333;
+}
+
+.inline-form {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.inline-form button,
+#refresh-kutipan {
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 6px 12px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.inline-form button:hover,
+#refresh-kutipan:hover {
+  background: #555;
+}
+
+#daftar-tugas,
+#daftar-catatan {
+  list-style: none;
+  padding: 0;
+}
+
+#daftar-tugas li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 6px 0;
+}
+
+.catatan-item {
+  border-bottom: 1px solid #ddd;
+  padding: 6px 0;
+}
+
+.filter-bar button {
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: #fff;
+  color: #333;
+  padding: 4px 10px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.filter-bar button.active {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+@media (max-width: 700px) {
+  main#app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "judul"
+      "tugas"
+      "catatan"
+      "kutipan"
+      "cuaca";
+  }
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode section {
+    background-color: #1a1a1a;
+    border-color: #444;
+    border-top-color: #ccc;
+}
+
+body.dark-mode input {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode button {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode textarea {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode footer {
+    background-color: #333333;
+    color: white;
+}
